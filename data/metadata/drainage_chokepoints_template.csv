@@ -1,0 +1,2 @@
+chokepoint_id,name,road_id,chokepoint_type,condition,flood_susceptibility_score,source_id,quality
+CP-001,example bridge or culvert,,unknown,unknown,,SRC-007,missing
