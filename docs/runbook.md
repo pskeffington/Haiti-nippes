@@ -43,6 +43,24 @@ outputs/tables/chokepoint_priority_register.csv
 outputs/tables/flood_exposure_register.csv
 ```
 
+## Build static maps
+
+Build the standard map products:
+
+```bash
+python scripts/build_maps.py
+```
+
+If required GeoJSON layers are missing, the map builder writes text placeholders explaining which layer files are needed. Once processed layers are added, it writes PNG maps to:
+
+```text
+outputs/maps/health_access_distance.png
+outputs/maps/road_access_condition.png
+outputs/maps/flood_exposure_zones.png
+outputs/maps/wash_access.png
+outputs/maps/compound_access_vulnerability.png
+```
+
 ## Build commune access index only
 
 Fill or replace:
