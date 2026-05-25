@@ -1,0 +1,2 @@
+disruption_id,road_id,location_name,disruption_type,passability,flood_depth_m,detour_required,estimated_delay_minutes,wet_season_only,source_id,quality
+RD-001,,example bridge or road segment,unknown,unknown,,false,,true,SRC-007,missing
