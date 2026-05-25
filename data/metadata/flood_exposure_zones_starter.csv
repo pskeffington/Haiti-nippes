@@ -1,0 +1,4 @@
+zone_id,name,geography_name,flood_score,return_period,dominant_driver,source_id,quality
+FZ-BAR-001,Baraderes river valley flood corridor,Baraderes,0.85,unknown,riverine,SRC-007,provisional
+FZ-BAR-002,Baraderes bay drainage area,Baraderes,0.80,unknown,coastal,SRC-007,provisional
+FZ-BAR-003,Baraderes mountain road runoff corridor,Baraderes,0.75,unknown,rainfall,SRC-007,provisional
