@@ -8,6 +8,12 @@ from haiti_nippes.access_model import (
     RoadSegmentStatus,
     WashAccessRecord,
 )
+from haiti_nippes.commune_index import (
+    CommuneAccessIndexRow,
+    CommuneAccessInput,
+    build_commune_access_index,
+    build_commune_access_row,
+)
 from haiti_nippes.geography import (
     Arrondissement,
     Commune,
@@ -29,6 +35,8 @@ from haiti_nippes.scoring import (
 __all__ = [
     "Arrondissement",
     "Commune",
+    "CommuneAccessIndexRow",
+    "CommuneAccessInput",
     "CommuneAccessProfile",
     "DataQuality",
     "Department",
@@ -37,6 +45,8 @@ __all__ = [
     "RoadSegmentStatus",
     "ScoreWeights",
     "WashAccessRecord",
+    "build_commune_access_index",
+    "build_commune_access_row",
     "build_nippes_department",
     "distance_score",
     "iter_communes",
