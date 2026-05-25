@@ -16,6 +16,16 @@ Install optional GIS dependencies when working with geospatial files:
 python -m pip install -e '.[gis]'
 ```
 
+## Smoke test
+
+Run a lightweight package check after installation:
+
+```bash
+python scripts/smoke_test.py
+```
+
+The smoke test verifies that the package imports, the Nippes geography model loads, map products are registered, and starter road-disruption rows can be parsed.
+
 ## Validate expected GIS layers
 
 Run the GIS manifest check:
@@ -31,7 +41,13 @@ Expected early-stage result: commune, department, and earthquake layers will be 
 The combined table pipeline reads the commune-access template plus the starter flood and road records, then writes all current table outputs:
 
 ```bash
-python scripts/run_gis_pipeline.py
+run-gis-pipeline
+```
+
+To also build map PNGs or placeholder reports:
+
+```bash
+run-gis-pipeline --maps
 ```
 
 Default outputs:
@@ -41,6 +57,7 @@ outputs/tables/commune_access_index.csv
 outputs/tables/road_disruption_register.csv
 outputs/tables/chokepoint_priority_register.csv
 outputs/tables/flood_exposure_register.csv
+outputs/tables/map_readiness_report.csv
 ```
 
 ## Build static maps
@@ -48,7 +65,7 @@ outputs/tables/flood_exposure_register.csv
 Build the standard map products:
 
 ```bash
-python scripts/build_maps.py
+build-maps
 ```
 
 If required GeoJSON layers are missing, the map builder writes text placeholders explaining which layer files are needed. Once processed layers are added, it writes PNG maps to:
@@ -59,6 +76,20 @@ outputs/maps/road_access_condition.png
 outputs/maps/flood_exposure_zones.png
 outputs/maps/wash_access.png
 outputs/maps/compound_access_vulnerability.png
+```
+
+## Build map-readiness report only
+
+Build only the map-readiness report:
+
+```bash
+build-map-readiness
+```
+
+Default output:
+
+```text
+outputs/tables/map_readiness_report.csv
 ```
 
 ## Build commune access index only
