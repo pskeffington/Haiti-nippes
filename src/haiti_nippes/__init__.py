@@ -49,6 +49,12 @@ from haiti_nippes.io import (
 )
 from haiti_nippes.map_builder import build_all_maps, build_map_product
 from haiti_nippes.map_config import MapBuildConfig, MapLayerSpec, MapProductSpec, map_products
+from haiti_nippes.map_readiness import (
+    MapReadinessRow,
+    build_map_readiness_report,
+    build_map_readiness_row,
+    write_map_readiness_report,
+)
 from haiti_nippes.pipeline import PipelinePaths, PipelineResult, run_table_pipeline
 from haiti_nippes.scoring import (
     ScoreWeights,
@@ -78,6 +84,7 @@ __all__ = [
     "MapBuildConfig",
     "MapLayerSpec",
     "MapProductSpec",
+    "MapReadinessRow",
     "PassabilityStatus",
     "PipelinePaths",
     "PipelineResult",
@@ -92,6 +99,8 @@ __all__ = [
     "build_commune_access_row",
     "build_flood_exposure_register",
     "build_map_product",
+    "build_map_readiness_report",
+    "build_map_readiness_row",
     "build_nippes_department",
     "build_road_disruption_register",
     "distance_score",
@@ -111,5 +120,6 @@ __all__ = [
     "write_chokepoint_priority_register",
     "write_commune_access_index",
     "write_flood_exposure_register",
+    "write_map_readiness_report",
     "write_road_disruption_register",
 ]
