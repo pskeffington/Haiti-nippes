@@ -16,6 +16,15 @@ from haiti_nippes.geography import (
     iter_communes,
     normalize_name,
 )
+from haiti_nippes.scoring import (
+    ScoreWeights,
+    distance_score,
+    min_max_score,
+    quality_from_missing,
+    road_penalty_score,
+    travel_time_score,
+    weighted_index,
+)
 
 __all__ = [
     "Arrondissement",
@@ -26,8 +35,15 @@ __all__ = [
     "FacilityType",
     "HealthFacility",
     "RoadSegmentStatus",
+    "ScoreWeights",
     "WashAccessRecord",
     "build_nippes_department",
+    "distance_score",
     "iter_communes",
+    "min_max_score",
     "normalize_name",
+    "quality_from_missing",
+    "road_penalty_score",
+    "travel_time_score",
+    "weighted_index",
 ]
