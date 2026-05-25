@@ -14,6 +14,14 @@ from haiti_nippes.commune_index import (
     build_commune_access_index,
     build_commune_access_row,
 )
+from haiti_nippes.flood_road_index import (
+    ChokepointPriorityRow,
+    FloodExposurePriorityRow,
+    RoadDisruptionPriorityRow,
+    build_chokepoint_priority_register,
+    build_flood_exposure_register,
+    build_road_disruption_register,
+)
 from haiti_nippes.flood_road_model import (
     DisruptionType,
     DrainageChokepoint,
@@ -29,7 +37,16 @@ from haiti_nippes.geography import (
     iter_communes,
     normalize_name,
 )
-from haiti_nippes.io import read_commune_access_inputs, write_commune_access_index
+from haiti_nippes.io import (
+    read_commune_access_inputs,
+    read_drainage_chokepoints,
+    read_flood_exposure_zones,
+    read_road_disruptions,
+    write_chokepoint_priority_register,
+    write_commune_access_index,
+    write_flood_exposure_register,
+    write_road_disruption_register,
+)
 from haiti_nippes.scoring import (
     ScoreWeights,
     distance_score,
@@ -42,6 +59,7 @@ from haiti_nippes.scoring import (
 
 __all__ = [
     "Arrondissement",
+    "ChokepointPriorityRow",
     "Commune",
     "CommuneAccessIndexRow",
     "CommuneAccessInput",
@@ -51,24 +69,35 @@ __all__ = [
     "DisruptionType",
     "DrainageChokepoint",
     "FacilityType",
+    "FloodExposurePriorityRow",
     "FloodExposureZone",
     "HealthFacility",
     "PassabilityStatus",
+    "RoadDisruptionPriorityRow",
     "RoadDisruptionRecord",
     "RoadSegmentStatus",
     "ScoreWeights",
     "WashAccessRecord",
+    "build_chokepoint_priority_register",
     "build_commune_access_index",
     "build_commune_access_row",
+    "build_flood_exposure_register",
     "build_nippes_department",
+    "build_road_disruption_register",
     "distance_score",
     "iter_communes",
     "min_max_score",
     "normalize_name",
     "quality_from_missing",
     "read_commune_access_inputs",
+    "read_drainage_chokepoints",
+    "read_flood_exposure_zones",
+    "read_road_disruptions",
     "road_penalty_score",
     "travel_time_score",
     "weighted_index",
+    "write_chokepoint_priority_register",
     "write_commune_access_index",
+    "write_flood_exposure_register",
+    "write_road_disruption_register",
 ]
