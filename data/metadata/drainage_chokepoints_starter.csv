@@ -1,0 +1,4 @@
+chokepoint_id,name,road_id,chokepoint_type,condition,flood_susceptibility_score,source_id,quality
+CP-BAR-001,Baraderes river mouth drainage corridor,,river crossing,unknown,0.85,SRC-007,provisional
+CP-BAR-002,Bay of Baraderes sedimentation and blockage zone,,drainage,unknown,0.8,SRC-007,provisional
+CP-BAR-003,Mountain-road drainage crossings toward Baraderes,,culvert,unknown,0.75,SRC-007,provisional
