@@ -21,6 +21,7 @@ gis = [
 
 [project.scripts]
 build-commune-access-index = "scripts.build_commune_access_index:main"
+build-flood-road-registers = "scripts.build_flood_road_registers:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
