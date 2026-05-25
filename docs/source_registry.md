@@ -12,6 +12,7 @@ This registry tracks source leads for the Haiti Nippes GIS and public-health rec
 | SRC-004 | Humanitarian situation | Haiti earthquake situation reports | OCHA / ReliefWeb | Southern peninsula, including Nippes | Use for timeline, affected population, infrastructure damage, and operational constraints. |
 | SRC-005 | WASH | Haiti WASH, water access, sanitation, and cholera-related reporting | UNICEF / WHO / PAHO / WASH Cluster | Department or commune where available | Use for WASH risk indicators and service-restoration context. |
 | SRC-006 | Food security | Haiti acute food insecurity and livelihoods reporting | WFP / IPC / FEWS NET | Department or livelihood zone | Use for food-security overlay and vulnerability scoring. |
+| SRC-007 | Flood and road disruption | Flood-prone roads, bridge/culvert chokepoints, landslide corridors, road washouts, passability observations | HDX / OpenStreetMap / humanitarian logistics sources / field verification | Department, commune, road corridor, chokepoint | Use for wet-season access penalties, flood exposure maps, and road-disruption registers. |
 
 ## Intake fields
 
