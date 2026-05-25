@@ -22,6 +22,7 @@ from haiti_nippes.io import (
     write_road_disruption_register,
 )
 from haiti_nippes.map_builder import build_all_maps
+from haiti_nippes.map_readiness import build_map_readiness_report, write_map_readiness_report
 
 
 @dataclass(frozen=True)
@@ -36,6 +37,7 @@ class PipelinePaths:
     road_disruptions_output: Path = Path("outputs/tables/road_disruption_register.csv")
     drainage_chokepoints_output: Path = Path("outputs/tables/chokepoint_priority_register.csv")
     flood_exposure_output: Path = Path("outputs/tables/flood_exposure_register.csv")
+    map_readiness_output: Path = Path("outputs/tables/map_readiness_report.csv")
 
 
 @dataclass(frozen=True)
@@ -46,6 +48,8 @@ class PipelineResult:
     road_disruption_rows: int
     drainage_chokepoint_rows: int
     flood_exposure_rows: int
+    map_readiness_rows: int
+    map_readiness_output: Path
     map_outputs: tuple[Path, ...] = ()
 
     def summary_lines(self) -> tuple[str, ...]:
@@ -55,6 +59,8 @@ class PipelineResult:
             f"road disruption rows: {self.road_disruption_rows}",
             f"drainage chokepoint rows: {self.drainage_chokepoint_rows}",
             f"flood exposure rows: {self.flood_exposure_rows}",
+            f"map readiness rows: {self.map_readiness_rows}",
+            f"map readiness output: {self.map_readiness_output}",
         ]
         if self.map_outputs:
             lines.append("map outputs:")
@@ -82,11 +88,13 @@ def run_table_pipeline(
     road_rows = build_road_disruption_register(road_records)
     chokepoint_rows = build_chokepoint_priority_register(chokepoint_records)
     flood_rows = build_flood_exposure_register(flood_records)
+    readiness_rows = build_map_readiness_report()
 
     write_commune_access_index(commune_rows, target_paths.commune_access_output)
     write_road_disruption_register(road_rows, target_paths.road_disruptions_output)
     write_chokepoint_priority_register(chokepoint_rows, target_paths.drainage_chokepoints_output)
     write_flood_exposure_register(flood_rows, target_paths.flood_exposure_output)
+    write_map_readiness_report(readiness_rows, target_paths.map_readiness_output)
 
     map_outputs = tuple(build_all_maps()) if build_maps else ()
     return PipelineResult(
@@ -94,5 +102,7 @@ def run_table_pipeline(
         road_disruption_rows=len(road_rows),
         drainage_chokepoint_rows=len(chokepoint_rows),
         flood_exposure_rows=len(flood_rows),
+        map_readiness_rows=len(readiness_rows),
+        map_readiness_output=target_paths.map_readiness_output,
         map_outputs=map_outputs,
     )
