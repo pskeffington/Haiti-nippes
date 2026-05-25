@@ -20,8 +20,11 @@ gis = [
 ]
 
 [project.scripts]
-build-commune-access-index = "scripts.build_commune_access_index:main"
-build-flood-road-registers = "scripts.build_flood_road_registers:main"
+build-commune-access-index = "haiti_nippes.cli:build_commune_access_index_cli"
+build-flood-road-registers = "haiti_nippes.cli:build_flood_road_registers_cli"
+run-gis-pipeline = "haiti_nippes.cli:run_gis_pipeline_cli"
+build-maps = "haiti_nippes.cli:build_maps_cli"
+build-map-readiness = "haiti_nippes.cli:build_map_readiness_cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
