@@ -1,0 +1,7 @@
+geopandas>=0.14
+pandas>=2.0
+shapely>=2.0
+pyproj>=3.6
+networkx>=3.0
+matplotlib>=3.8
+pytest>=8.0
