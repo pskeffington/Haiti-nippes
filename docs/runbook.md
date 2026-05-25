@@ -26,7 +26,24 @@ python src/haiti_nippes/gis_workflow.py
 
 Expected early-stage result: commune, department, and earthquake layers will be missing until real processed GeoJSON files are added. Road, health, flood, and chokepoint layers are tracked as optional because they may arrive in stages.
 
-## Build commune access index
+## Run the combined GIS table pipeline
+
+The combined table pipeline reads the commune-access template plus the starter flood and road records, then writes all current table outputs:
+
+```bash
+python scripts/run_gis_pipeline.py
+```
+
+Default outputs:
+
+```text
+outputs/tables/commune_access_index.csv
+outputs/tables/road_disruption_register.csv
+outputs/tables/chokepoint_priority_register.csv
+outputs/tables/flood_exposure_register.csv
+```
+
+## Build commune access index only
 
 Fill or replace:
 
@@ -46,14 +63,17 @@ Default output:
 outputs/tables/commune_access_index.csv
 ```
 
-## Build flood and road-disruption registers
+## Build flood and road-disruption registers only
 
-Fill or replace these templates:
+Fill or replace these templates or use the starter files:
 
 ```text
 data/metadata/road_disruptions_template.csv
 data/metadata/drainage_chokepoints_template.csv
 data/metadata/flood_exposure_zones_template.csv
+data/metadata/road_disruptions_starter.csv
+data/metadata/drainage_chokepoints_starter.csv
+data/metadata/flood_exposure_zones_starter.csv
 ```
 
 Then run:
