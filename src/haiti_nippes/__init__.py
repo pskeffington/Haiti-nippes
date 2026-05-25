@@ -22,6 +22,7 @@ from haiti_nippes.geography import (
     iter_communes,
     normalize_name,
 )
+from haiti_nippes.io import read_commune_access_inputs, write_commune_access_index
 from haiti_nippes.scoring import (
     ScoreWeights,
     distance_score,
@@ -53,7 +54,9 @@ __all__ = [
     "min_max_score",
     "normalize_name",
     "quality_from_missing",
+    "read_commune_access_inputs",
     "road_penalty_score",
     "travel_time_score",
     "weighted_index",
+    "write_commune_access_index",
 ]
