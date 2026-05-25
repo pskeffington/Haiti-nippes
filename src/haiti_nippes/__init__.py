@@ -14,6 +14,13 @@ from haiti_nippes.commune_index import (
     build_commune_access_index,
     build_commune_access_row,
 )
+from haiti_nippes.flood_road_model import (
+    DisruptionType,
+    DrainageChokepoint,
+    FloodExposureZone,
+    PassabilityStatus,
+    RoadDisruptionRecord,
+)
 from haiti_nippes.geography import (
     Arrondissement,
     Commune,
@@ -41,8 +48,13 @@ __all__ = [
     "CommuneAccessProfile",
     "DataQuality",
     "Department",
+    "DisruptionType",
+    "DrainageChokepoint",
     "FacilityType",
+    "FloodExposureZone",
     "HealthFacility",
+    "PassabilityStatus",
+    "RoadDisruptionRecord",
     "RoadSegmentStatus",
     "ScoreWeights",
     "WashAccessRecord",
