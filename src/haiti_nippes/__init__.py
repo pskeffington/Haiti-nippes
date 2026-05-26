@@ -73,6 +73,11 @@ from haiti_nippes.maternal_health import (
     ReferralConstraint,
     priority_maternal_source_leads,
 )
+from haiti_nippes.maternal_io import (
+    read_maternal_access_inputs,
+    score_maternal_access_csv,
+    write_maternal_access_index,
+)
 from haiti_nippes.pipeline import PipelinePaths, PipelineResult, run_table_pipeline
 from haiti_nippes.scoring import (
     ScoreWeights,
@@ -144,14 +149,17 @@ __all__ = [
     "read_commune_access_inputs",
     "read_drainage_chokepoints",
     "read_flood_exposure_zones",
+    "read_maternal_access_inputs",
     "read_road_disruptions",
     "road_penalty_score",
     "run_table_pipeline",
+    "score_maternal_access_csv",
     "travel_time_score",
     "weighted_index",
     "write_chokepoint_priority_register",
     "write_commune_access_index",
     "write_flood_exposure_register",
     "write_map_readiness_report",
+    "write_maternal_access_index",
     "write_road_disruption_register",
 ]
