@@ -55,6 +55,16 @@ from haiti_nippes.map_readiness import (
     build_map_readiness_row,
     write_map_readiness_report,
 )
+from haiti_nippes.maternal_health import (
+    MaternalHealthIndicator,
+    MaternalReferralProfile,
+    MaternalRiskGroup,
+    MaternalServiceCapacity,
+    MaternalServiceType,
+    MaternalSourceLead,
+    ReferralConstraint,
+    priority_maternal_source_leads,
+)
 from haiti_nippes.pipeline import PipelinePaths, PipelineResult, run_table_pipeline
 from haiti_nippes.scoring import (
     ScoreWeights,
@@ -85,9 +95,16 @@ __all__ = [
     "MapLayerSpec",
     "MapProductSpec",
     "MapReadinessRow",
+    "MaternalHealthIndicator",
+    "MaternalReferralProfile",
+    "MaternalRiskGroup",
+    "MaternalServiceCapacity",
+    "MaternalServiceType",
+    "MaternalSourceLead",
     "PassabilityStatus",
     "PipelinePaths",
     "PipelineResult",
+    "ReferralConstraint",
     "RoadDisruptionPriorityRow",
     "RoadDisruptionRecord",
     "RoadSegmentStatus",
@@ -108,6 +125,7 @@ __all__ = [
     "map_products",
     "min_max_score",
     "normalize_name",
+    "priority_maternal_source_leads",
     "quality_from_missing",
     "read_commune_access_inputs",
     "read_drainage_chokepoints",
