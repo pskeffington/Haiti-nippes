@@ -55,6 +55,14 @@ from haiti_nippes.map_readiness import (
     build_map_readiness_row,
     write_map_readiness_report,
 )
+from haiti_nippes.maternal_access_index import (
+    MaternalAccessIndexRow,
+    MaternalAccessInput,
+    MaternalAccessPriority,
+    build_maternal_access_index,
+    build_maternal_access_row,
+    classify_priority,
+)
 from haiti_nippes.maternal_health import (
     MaternalHealthIndicator,
     MaternalReferralProfile,
@@ -95,6 +103,9 @@ __all__ = [
     "MapLayerSpec",
     "MapProductSpec",
     "MapReadinessRow",
+    "MaternalAccessIndexRow",
+    "MaternalAccessInput",
+    "MaternalAccessPriority",
     "MaternalHealthIndicator",
     "MaternalReferralProfile",
     "MaternalRiskGroup",
@@ -118,8 +129,11 @@ __all__ = [
     "build_map_product",
     "build_map_readiness_report",
     "build_map_readiness_row",
+    "build_maternal_access_index",
+    "build_maternal_access_row",
     "build_nippes_department",
     "build_road_disruption_register",
+    "classify_priority",
     "distance_score",
     "iter_communes",
     "map_products",
