@@ -2,6 +2,14 @@
 
 Field-oriented repository for the Haiti Nippes project. The working purpose is to organize evidence, geospatial notes, public-health risk factors, and recovery planning for Nippes Department, Haiti, with particular attention to earthquake recovery, WASH resilience, health-access restoration, and rural service delivery.
 
+**Maintainer:** Paul Skeffington, MS, MPH  
+**Repository status:** active source-registration and field-profile scaffold.  
+**Last documentation refresh:** 2026-05-26
+
+## Current update — 2026-05-26
+
+The repository remains in early source-registration and object-model setup. The immediate documentation priority is to build `docs/source_registry.md`, define administrative geography objects, and keep all demographic, WASH, food-security, seismic, and health-access claims tied to source-log entries before producing briefs, maps, or risk tables.
+
 ## Situation frame
 
 Nippes is one of Haiti's ten departments, with Miragoane as its capital and an estimated 2015 population of about 342,325. The department includes coastal and rural communes across the Miragoane, Anse-a-Veau, and Baraderes arrondissements. Petit-Trou-de-Nippes was near the epicentral area of the 14 August 2021 magnitude 7.2 earthquake, which caused major loss of life, building damage, and continuing recovery needs across Haiti's southern peninsula.
