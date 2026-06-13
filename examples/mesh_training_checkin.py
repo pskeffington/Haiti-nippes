@@ -6,7 +6,7 @@ Bluetooth, serial, TCP, or any live Meshtastic network.
 
 from __future__ import annotations
 
-from haiti_nippes.mesh.interface import MemoryTransport, MeshInterface
+from haiti_nippes.mesh import MemoryTransport, MeshInterface
 from haiti_nippes.mesh.training import basic_check_in_drill
 
 
