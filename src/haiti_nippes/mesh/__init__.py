@@ -6,7 +6,9 @@ coordinates, or private deployment details in this repository while it is
 public.
 """
 
-from .message import FieldMessage, MessagePriority, MessageKind
+from .adapters import MemoryTransport
+from .interface import MeshInterface, MeshTransport
+from .message import FieldMessage, MessageKind, MessagePriority
 from .node import MeshNode, NodeRole
 from .inventory import DeviceInventoryRecord, DeviceStatus
 from .packet_log import PacketLogRecord
@@ -18,7 +20,10 @@ __all__ = [
     "DeviceStatus",
     "FieldMessage",
     "KeyRotationRecord",
+    "MemoryTransport",
+    "MeshInterface",
     "MeshNode",
+    "MeshTransport",
     "MessageKind",
     "MessagePriority",
     "NodeRole",
