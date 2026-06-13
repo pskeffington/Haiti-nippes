@@ -1,33 +1,18 @@
-"""Interface stubs for future Meshtastic device integration.
-
-The real Meshtastic Python dependency is intentionally not imported here yet so
-this repository can remain lightweight while the programming matrix matures.
-"""
+"""Interface boundary for Meshtastic-compatible transports."""
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Protocol
 
 from .message import FieldMessage
 
 
 class MeshTransport(Protocol):
-    """Protocol for transport adapters implemented later."""
+    """Protocol for transport adapters."""
 
     def send_text(self, text: str) -> None:
         """Send a text payload through a Meshtastic-compatible transport."""
-
-
-@dataclass(slots=True)
-class MemoryTransport:
-    """A test transport that records messages in memory."""
-
-    sent_messages: list[str] = field(default_factory=list)
-
-    def send_text(self, text: str) -> None:
-        """Record a message without touching radio hardware."""
-        self.sent_messages.append(text)
 
 
 @dataclass(slots=True)
