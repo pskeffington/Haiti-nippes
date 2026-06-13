@@ -6,6 +6,7 @@ import csv
 
 import pytest
 
+from examples.mesh_packet_log_demo import build_demo_records
 from haiti_nippes.mesh import (
     ChannelPolicy,
     DeviceInventoryRecord,
@@ -183,6 +184,16 @@ def test_write_packet_log_csv(tmp_path) -> None:  # type: ignore[no-untyped-def]
             "snr": "7.25",
         }
     ]
+
+
+def test_packet_log_demo_records_are_public_safe() -> None:
+    records = build_demo_records()
+
+    assert len(records) == 2
+    assert all(record.channel_label == "training" for record in records)
+    assert all("synthetic" in record.payload_summary for record in records)
+    for record in records:
+        record.validate_public_safe()
 
 
 def test_channel_policy_validate_requires_positive_rotation() -> None:
