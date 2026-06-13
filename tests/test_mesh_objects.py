@@ -10,14 +10,29 @@ from haiti_nippes.mesh import (
     DeviceStatus,
     FieldMessage,
     KeyRotationRecord,
+    MeshInterface,
     MeshNode,
     MessageKind,
     MessagePriority,
     NodeRole,
     PacketLogRecord,
 )
-from haiti_nippes.mesh.interface import MemoryTransport, MeshInterface
+from haiti_nippes.mesh.adapters import (
+    MemoryTransport,
+    MeshtasticCliTransport,
+    MeshtasticPythonTransport,
+)
 from haiti_nippes.mesh.training import basic_check_in_drill
+
+
+class FakeMeshtasticInterface:
+    """Small fake that mimics the Meshtastic Python sendText method."""
+
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, dict[str, object]]] = []
+
+    def sendText(self, text: str, **kwargs: object) -> None:  # noqa: N802
+        self.calls.append((text, kwargs))
 
 
 def test_field_message_renders_compact_text() -> None:
@@ -58,6 +73,35 @@ def test_memory_transport_records_sent_message() -> None:
 
     assert sent_text in transport.sent_messages
     assert sent_text.startswith("ROUTINE / TRAINING")
+
+
+def test_cli_transport_builds_dry_run_command() -> None:
+    transport = MeshtasticCliTransport(destination="!abcd1234", channel_index=1)
+    command = transport.build_command("hello")
+
+    assert command == [
+        "meshtastic",
+        "--sendtext",
+        "hello",
+        "--dest",
+        "!abcd1234",
+        "--ch-index",
+        "1",
+    ]
+    transport.send_text("hello")
+
+
+def test_python_transport_uses_injected_interface() -> None:
+    fake = FakeMeshtasticInterface()
+    transport = MeshtasticPythonTransport(
+        interface=fake,
+        destination_id="!abcd1234",
+        channel_index=1,
+    )
+
+    transport.send_text("hello")
+
+    assert fake.calls == [("hello", {"destinationId": "!abcd1234", "channelIndex": 1})]
 
 
 def test_mesh_node_display_name() -> None:
