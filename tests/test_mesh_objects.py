@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import csv
+
 import pytest
 
 from haiti_nippes.mesh import (
@@ -16,6 +18,7 @@ from haiti_nippes.mesh import (
     MessagePriority,
     NodeRole,
     PacketLogRecord,
+    write_packet_log_csv,
 )
 from haiti_nippes.mesh.adapters import (
     MemoryTransport,
@@ -144,6 +147,42 @@ def test_packet_log_rejects_sensitive_summary() -> None:
 
     with pytest.raises(ValueError, match="sensitive"):
         record.to_row()
+
+
+def test_write_packet_log_csv(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    record = PacketLogRecord(
+        observed_at="2026-06-13T00:00:00Z",
+        source_node="NIP-001",
+        destination_node="NIP-002",
+        channel_label="training",
+        message_kind="training",
+        priority="routine",
+        payload_summary="synthetic check-in",
+        hop_limit=3,
+        rssi=-80.5,
+        snr=7.25,
+    )
+    output_path = tmp_path / "packet_log.csv"
+
+    write_packet_log_csv(output_path, [record])
+
+    with output_path.open("r", encoding="utf-8") as csv_file:
+        rows = list(csv.DictReader(csv_file))
+
+    assert rows == [
+        {
+            "observed_at": "2026-06-13T00:00:00Z",
+            "source_node": "NIP-001",
+            "destination_node": "NIP-002",
+            "channel_label": "training",
+            "message_kind": "training",
+            "priority": "routine",
+            "payload_summary": "synthetic check-in",
+            "hop_limit": "3",
+            "rssi": "-80.5",
+            "snr": "7.25",
+        }
+    ]
 
 
 def test_channel_policy_validate_requires_positive_rotation() -> None:
