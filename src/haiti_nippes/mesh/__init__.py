@@ -8,6 +8,7 @@ public.
 
 from .adapters import MemoryTransport
 from .interface import MeshInterface, MeshTransport
+from .logging import PACKET_LOG_FIELDS, write_packet_log_csv
 from .message import FieldMessage, MessageKind, MessagePriority
 from .node import MeshNode, NodeRole
 from .inventory import DeviceInventoryRecord, DeviceStatus
@@ -27,6 +28,8 @@ __all__ = [
     "MessageKind",
     "MessagePriority",
     "NodeRole",
+    "PACKET_LOG_FIELDS",
     "PacketLogRecord",
     "SecurityIncidentFlag",
+    "write_packet_log_csv",
 ]
