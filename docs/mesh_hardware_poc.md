@@ -45,6 +45,20 @@ python examples/mesh_cli_dry_run.py
 
 Expected behavior: the script prints a command shape and explicitly states that no message was transmitted.
 
+### Phase 1A: Packet-log dry-run validation
+
+Status: active.
+
+Purpose: confirm that the repository can generate a metadata-only packet-log CSV from synthetic observations.
+
+Command:
+
+```bash
+python examples/mesh_packet_log_demo.py
+```
+
+Expected behavior: the script writes `outputs/mesh_packet_log_demo.csv` with synthetic packet metadata only. Review `docs/mesh_packet_log_schema.md` before using this format for bench or field data.
+
 ### Phase 2: Local single-device CLI validation
 
 Status: planned.
@@ -76,6 +90,7 @@ Minimum success criteria:
 - Device A sends synthetic training message.
 - Device B receives the message.
 - Operator records timestamp, source label, destination label, channel label, RSSI/SNR if available, and short sanitized payload summary.
+- Packet observations follow `docs/mesh_packet_log_schema.md`.
 - No live patient or deployment-sensitive information is transmitted.
 
 ### Phase 4: Local range and obstruction test
@@ -129,6 +144,7 @@ python -m pip install -e ".[test]"
 python -m pytest tests/test_mesh_objects.py
 python examples/mesh_training_checkin.py
 python examples/mesh_cli_dry_run.py
+python examples/mesh_packet_log_demo.py
 ```
 
 For live Meshtastic Python work later:
@@ -139,4 +155,4 @@ python -m pip install -e ".[mesh,test]"
 
 ## Next programming step
 
-Add a metadata-only packet logging utility that writes `PacketLogRecord` objects to CSV. That will support bench testing without creating a database dependency or collecting sensitive payloads.
+Add a bench-test checklist and a CSV review checklist so generated packet logs can be inspected before any artifact is committed.
