@@ -18,6 +18,12 @@ gis = [
     "networkx>=3.2",
     "matplotlib>=3.8",
 ]
+mesh = [
+    "meshtastic>=2.6",
+]
+test = [
+    "pytest>=8.0",
+]
 
 [project.scripts]
 build-commune-access-index = "haiti_nippes.cli:build_commune_access_index_cli"
