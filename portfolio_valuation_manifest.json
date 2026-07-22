@@ -1,0 +1,21 @@
+{
+  "schema_version":"portfolio-valuation-manifest/v1",
+  "repository":"pskeffington/Haiti-nippes",
+  "portfolio_valuator":"pskeffington/Portfolio",
+  "valuation_status":"aligned_internal_estimate",
+  "market_lane":"public-health research / humanitarian intake",
+  "maturity_stage":"intake",
+  "evidence_grade":"C+",
+  "product_surface":"intake_docs",
+  "integration_role":"regional humanitarian and WASH research intake asset",
+  "public_safety_status":"clean",
+  "risk_level":"medium",
+  "current_value_range_usd":{"low":25000,"high":150000},
+  "forward_value_range_usd":{"low":250000,"high":1500000},
+  "collateral_treatment":"Option-value research asset only until source provenance, reproducibility, and validated outputs are complete.",
+  "evidence_paths":["README.md","portfolio_valuation_manifest.json"],
+  "next_value_unlocks":["complete source manifest","define bounded research outputs","connect to WASH proof packets"],
+  "missing_financial_inputs":["revenue","contracts","grant awards","third-party validation","independent appraisal"],
+  "claim_boundary":"No humanitarian effectiveness, field-readiness, institutional endorsement, or operational claim.",
+  "last_aligned_on":"2026-07-21"
+}
