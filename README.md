@@ -1,55 +1,39 @@
-# Haiti-nippes
+# Haiti Nippes Public Health Research
 
-Field-oriented repository for the Haiti Nippes project. The working purpose is to organize evidence, geospatial notes, public-health risk factors, and recovery planning for Nippes Department, Haiti, with particular attention to earthquake recovery, WASH resilience, health-access restoration, and rural service delivery.
+Public, civic-facing research scaffold for reproducible secondary-data study of earthquake recovery, WASH resilience, health access, food security, infrastructure fragility, and rural service delivery in Nippes Department, Haiti.
 
 **Maintainer:** Paul Skeffington, MS, MPH  
-**Repository status:** active source-registration and field-profile scaffold.  
-**Last documentation refresh:** 2026-05-26
+**Repository status:** source-registration and regional public-health research scaffold.  
+**Last documentation review:** 2026-08-12
 
-## Current update — 2026-05-26
+## Public-interest research boundary
 
-The repository remains in early source-registration and object-model setup. The immediate documentation priority is to build `docs/source_registry.md`, define administrative geography objects, and keep all demographic, WASH, food-security, seismic, and health-access claims tied to source-log entries before producing briefs, maps, or risk tables.
+This repository is maintained for public-health scholarship, humanitarian open-data methods, geospatial context, reproducible documentation, and regional systems analysis.
 
-## Situation frame
+It does not provide field tasking, emergency authority, site-specific operational instructions, household-level vulnerability findings, clinical determinations, partner directives, or policy mandates. Public outputs should use source-verified, non-sensitive, appropriately aggregated information and should preserve uncertainty and data limitations.
 
-Nippes is one of Haiti's ten departments, with Miragoane as its capital and an estimated 2015 population of about 342,325. The department includes coastal and rural communes across the Miragoane, Anse-a-Veau, and Baraderes arrondissements. Petit-Trou-de-Nippes was near the epicentral area of the 14 August 2021 magnitude 7.2 earthquake, which caused major loss of life, building damage, and continuing recovery needs across Haiti's southern peninsula.
+## Research focus
 
-## Project objectives
+The project examines Nippes Department through a reproducible regional profile covering:
 
-- Build a concise open-source profile of Nippes Department.
-- Track earthquake recovery, WASH, food security, health access, and infrastructure fragility.
-- Separate source notes, datasets, analytic notebooks, and publication-ready outputs.
-- Keep the repository lightweight, reproducible, and easy to extend.
+- post-earthquake recovery context;
+- WASH access and resilience;
+- health-service access;
+- food-security context;
+- road and infrastructure constraints;
+- administrative geography;
+- public humanitarian and health indicators;
+- source provenance and uncertainty.
 
-## Repository map
+## Core research question
 
-```text
-Haiti-nippes/
-├── README.md
-├── data/                 # Raw and derived datasets, not committed unless small and public
-├── docs/                 # Project briefs, source notes, and written outputs
-├── notebooks/            # Exploratory analysis notebooks
-├── src/                  # Reusable analysis modules
-└── outputs/              # Tables, figures, and generated artifacts
-```
+How can public humanitarian, demographic, geospatial, WASH, health-access, and recovery data be organized into a reproducible regional profile of Nippes while avoiding unsupported causal, household-level, or operational claims?
 
-## Initial work packages
+## Current status
 
-### 1. Source registry
+The repository remains in early source-registration and object-model development. Before briefs, maps, or comparative risk tables are treated as research evidence, source provenance, geography, update dates, and verification status should be recorded explicitly.
 
-Create a source log for demographic, humanitarian, WASH, food-security, health-facility, seismic, and administrative-boundary references. Each source should record title, publisher, date, URL, access date, geography, and reliability notes.
-
-### 2. Administrative geography
-
-Define Nippes Department and its arrondissements/communes in a reusable geography file. Prioritize official Haitian statistical or humanitarian boundary sources when available.
-
-### 3. Risk profile
-
-Develop a short baseline profile covering seismic exposure, road access, health access, water and sanitation, food security, and post-2021 recovery constraints.
-
-### 4. Data model
-
-Use small, typed objects for core entities:
+## Research objects
 
 - `Department`
 - `Arrondissement`
@@ -58,24 +42,48 @@ Use small, typed objects for core entities:
 - `RiskIndicator`
 - `ProjectOutput`
 
-### 5. Outputs
+These objects should support transparent data provenance and reproducible analysis rather than operational planning.
 
-Target outputs include a two-page project brief, a source registry, a commune-level risk table, and a reproducible map/figure set.
+## Repository map
 
-## Source leads
+```text
+Haiti-nippes/
+├── README.md
+├── data/                 # Raw and derived datasets; raw data excluded unless small and clearly redistributable
+├── docs/                 # Source registry, protocols, written outputs
+├── notebooks/            # Exploratory analysis
+├── src/                  # Reusable analysis modules
+└── outputs/              # Tables, figures, and generated artifacts
+```
 
-- USGS earthquake event page for the 14 August 2021 M 7.2 Nippes earthquake.
-- Haitian IHSI population estimates for department and commune population baselines.
-- OCHA, ReliefWeb, UNICEF, WFP, PAHO/WHO, and IOM reporting for humanitarian and public-health indicators.
-- HDX and Haiti administrative-boundary datasets for shapefiles and geocoding.
+## Source classes
 
-## Style rules
+Priority source classes include official Haitian statistical sources where available, USGS earthquake records, PAHO/WHO, UNICEF, OCHA, ReliefWeb, WFP, IOM, HDX, and other public humanitarian or health-system sources with documented access and verification dates.
 
-- Keep `README` capitalized.
-- Use sentence case for section titles and project labels unless a proper noun or acronym requires capitalization.
-- Keep source claims tied to citations or source-log entries.
-- Avoid committing sensitive, private, or unverifiable data.
+No source should be treated as current solely because it appears in the repository. Source date, geography, publisher, access route, and verification status should be logged before manuscript-weight use.
 
-## Next action
+## Documentation standards
 
-Start with `docs/source_registry.md`, then add a minimal `src/haiti_nippes/` package for typed project objects.
+- Keep source claims tied to `docs/source_registry.md` or an equivalent machine-readable manifest.
+- Preserve distinctions between observed data, published estimates, contextual narrative, and research interpretation.
+- Avoid household-level coordinates or sensitive community vulnerability data.
+- Record administrative-boundary versions and crosswalk decisions.
+- Preserve uncertainty arising from displacement, incomplete reporting, changing access, and outdated denominators.
+- Do not infer present conditions from post-2021 reports without date-specific verification.
+
+## Next actions
+
+1. Build or refresh `docs/source_registry.md` with publisher, date, URL, access date, geography, variable class, and verification status.
+2. Define reusable administrative-geography files for department, arrondissement, and commune levels.
+3. Build a descriptive regional indicator table with explicit source and year fields.
+4. Add a methods note distinguishing descriptive secondary-data research from causal or operational assessment.
+5. Create reproducible map and figure templates using non-sensitive public data.
+6. Connect validated outputs to the broader public-health portfolio evidence ledger.
+
+## Supported contribution
+
+A reproducible, source-bounded regional public-health profile of Nippes using public humanitarian and health data.
+
+## Unsupported contribution
+
+No field deployment guidance, emergency response authority, household-level risk determination, clinical recommendation, or current-condition claim without source-date verification is made.
