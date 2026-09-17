@@ -1,5 +1,11 @@
 # Haiti Nippes Public Health Research
 
+## Portfolio evidence review — 2026-09-17
+
+**Reviewed carry-forward.** The status file contains a maternal-access framework and calls it validation-gated, while the valuation manifest remains intake. These describe different axes: abstract/object-model readiness does not establish empirical validation. Retain intake valuation until a dated source manifest and first reproducible, public-safe evidence packet exist.
+
+Maturity and valuation ranges are unchanged. [Current review and next evidence gates](docs/valuation/2026-09-17_review.md). Dates and result claims elsewhere retain their original scope.
+
 Public, civic-facing research scaffold for reproducible secondary-data study of earthquake recovery, WASH resilience, health access, food security, infrastructure fragility, and rural service delivery in Nippes Department, Haiti.
 
 **Maintainer:** Paul Skeffington, MS, MPH  

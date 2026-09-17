@@ -1,5 +1,11 @@
 # Project status
 
+## Current portfolio review — 2026-09-17
+
+The status file contains a maternal-access framework and calls it validation-gated, while the valuation manifest remains intake. These describe different axes: abstract/object-model readiness does not establish empirical validation. Retain intake valuation until a dated source manifest and first reproducible, public-safe evidence packet exist.
+
+[Evidence review and current next gates](docs/valuation/2026-09-17_review.md). The older project-status details below are retained as historical context; they do not override this review's valuation or claim boundaries.
+
 **Repository status:** validation-gated maternal-health access framework and public-health policy analysis scaffold.
 
 Haiti Nippes is an active public-health repository focused on maternal-health access, rural referral constraints, emergency obstetric care readiness, WASH resilience, and commune-level prioritization in Nippes Department, Haiti.

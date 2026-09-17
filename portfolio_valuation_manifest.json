@@ -1,21 +1,44 @@
 {
-  "schema_version":"portfolio-valuation-manifest/v1",
-  "repository":"pskeffington/Haiti-nippes",
-  "portfolio_valuator":"pskeffington/Portfolio",
-  "valuation_status":"aligned_internal_estimate",
-  "market_lane":"humanitarian WASH / regional research intake",
-  "maturity_stage":"intake",
-  "evidence_grade":"C+",
-  "product_surface":"regional humanitarian research intake scaffold",
-  "integration_role":"supporting humanitarian/WASH intake component",
-  "public_safety_status":"clean",
-  "risk_level":"medium",
-  "current_value_range_usd":{"low":10000,"high":40000},
-  "forward_value_range_usd":{"low":50000,"high":150000},
-  "collateral_treatment":"Treat as option-value research intake only until source provenance, reusable methods, reproducible outputs, and external validation are established.",
-  "evidence_paths":["README.md","portfolio_valuation_manifest.json"],
-  "next_value_unlocks":["complete authoritative source manifest","define bounded research question and outputs","connect to reusable WASH methods","produce first reproducible public-safe evidence packet"],
-  "missing_financial_inputs":["revenue","contracts","grant awards","external adoption","third-party validation","independent appraisal"],
-  "claim_boundary":"Regional humanitarian research intake only; no field-effectiveness, deployment, institutional endorsement, funding, or operational claim.",
-  "last_aligned_on":"2026-08-17"
+  "claim_boundary": "Regional humanitarian research intake only; no field-effectiveness, deployment, institutional endorsement, funding, or operational claim.",
+  "collateral_treatment": "Treat as option-value research intake only until source provenance, reusable methods, reproducible outputs, and external validation are established. Reviewed on 2026-09-17 against the recorded main-branch evidence; current and forward ranges, maturity, and evidence grade are carried forward without uplift. See docs/valuation/2026-09-17_review.md for scope and unresolved evidence gates.",
+  "current_value_range_usd": {
+    "high": 40000,
+    "low": 10000
+  },
+  "evidence_grade": "C+",
+  "evidence_paths": [
+    "README.md",
+    "portfolio_valuation_manifest.json",
+    "PROJECT_STATUS.md",
+    "docs/valuation/2026-09-17_review.md"
+  ],
+  "forward_value_range_usd": {
+    "high": 150000,
+    "low": 50000
+  },
+  "integration_role": "supporting humanitarian/WASH intake component",
+  "last_aligned_on": "2026-09-17",
+  "market_lane": "humanitarian WASH / regional research intake",
+  "maturity_stage": "intake",
+  "missing_financial_inputs": [
+    "revenue",
+    "contracts",
+    "grant awards",
+    "external adoption",
+    "third-party validation",
+    "independent appraisal"
+  ],
+  "next_value_unlocks": [
+    "complete authoritative source manifest",
+    "define bounded research question and outputs",
+    "connect to reusable WASH methods",
+    "produce first reproducible public-safe evidence packet"
+  ],
+  "portfolio_valuator": "pskeffington/Portfolio",
+  "product_surface": "regional humanitarian research intake scaffold",
+  "public_safety_status": "clean",
+  "repository": "pskeffington/Haiti-nippes",
+  "risk_level": "medium",
+  "schema_version": "portfolio-valuation-manifest/v1",
+  "valuation_status": "reviewed_carry_forward"
 }
